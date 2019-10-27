@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col-xs-1"></div>
+  <div class="col-xs-10">
+    <div class="container">
+      <div class="row">
+        <h3>Your tips</h3>
+      </div>
+      <div class="row">
+        <p>Sum of tips: {{ config.sum }} PLN</p>
+      </div>
+      <div class="row">
+        <form (ngSubmit)="addNewTip()" class="container-fluid">
+          <div class="form-group row">
+            <input [(ngModel)]="newTip.amount" type="number" class="col-sm-8 form-control form-control-lg" placeholder="Add tip" name="amount">
+            <input type="submit" class="col-sm-4 btn btn-secondary btn-block" value="Add tip" >
+          </div>
+          <div class="form-group row">
+            <textarea [(ngModel)]="newTip.description" class="form-control form-control-lg" placeholder="description" name="description"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <ul>
+            <li *ngFor="let tip of config.allTips">
+              {{ tip.amount }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-1"></div>
+</div>
