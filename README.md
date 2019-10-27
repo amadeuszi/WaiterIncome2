@@ -15,6 +15,7 @@ To run backend compile it and run Main class
 ```sh
 cd backend
 mvn clean package
+java -jar target/app.java
 ```
 
 To run frontend:
